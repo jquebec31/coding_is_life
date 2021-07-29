@@ -30,7 +30,7 @@ body {
     padding: 15px;
     margin: 20px auto;
     border-radius: 10px;
-    max-width: 600px;
+    max-width: 700px;
   }
   
   .weather-icon {
@@ -57,4 +57,8 @@ body {
   #description {
     text-transform: capitalize;
   }
-  
+  #footnote {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
