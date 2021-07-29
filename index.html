@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -37,51 +36,39 @@
               />
             </div>
             <div class="col-3">
-                <button
-                  class="btn btn-success w-100"
-                  id="current-location-button"
-                >
-                  Current
-                </button>
-              </div>
+              <button
+                class="btn btn-success w-100"
+                id="current-location-button"
+              >
+                Current
+              </button>
+            </div>
           </div>
         </form>
-        <h1 id="city">
-          Sydney
-        </h1>
+        <h1 id="city">Sydney</h1>
         <ul>
-          <li id="date">
             
-          </li>
-          <li id="description">
-            Partly Cloudy
-          </li>
+          <li id="date"></li>
+          <li id="description">Partly Cloudy</li>
         </ul>
         <div class="row">
           <div class="col-6">
             <div class="clearfix">
-                <img
+              <img
                 src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
                 alt="Cloudy icon"
                 class="weather-icon float-left"
               />
               <div class="float-left">
-                <span id="weather">19</span
-                <><span class="units">°C</span> 
+                <span id="weather">19</span><span class="units">°C</span>
               </div>
             </div>
           </div>
           <div class="col-6">
             <ul>
-                <li>
-                   Precipitation: 0%
-                  </li>
-              <li>
-                Humidity: <span id="humidity">77%</span>
-              </li>
-              <li>
-                Wind: <span id="wind">8</span> km/h
-              </li>
+              <li>Precipitation: 0%</li>
+              <li>Humidity: <span id="humidity">77%</span></li>
+              <li>Wind: <span id="wind">8</span> km/h</li>
             </ul>
           </div>
         </div>
