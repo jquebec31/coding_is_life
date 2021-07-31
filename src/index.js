@@ -31,8 +31,8 @@ function formatDate(date) {
   let cityElement = document.querySelector("#city");
   let cityInput = document.querySelector("#city-input");
   cityElement.innerHTML = cityInput.value;
+
   
-  // event listeners
   let searchForm = document.querySelector("#search-form");
   searchForm.addEventListener("submit", handleSubmit);
   
@@ -44,6 +44,8 @@ function formatDate(date) {
     document.querySelector("#wind").innerHTML = response.data.wind.speed;
     document.querySelector("#description").innerHTML = response.data.weather[0].description;
     document.querySelector("#city").innerHTML = response.data.name;
+    document.querySelector("#icon").setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    
   }
   
   function searchCity(city) {
