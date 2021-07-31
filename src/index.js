@@ -20,7 +20,7 @@ function formatDate(date) {
     ];
     let day = days[dayIndex];
   
-    return `${day} ${hours}:${minutes}`;
+    return `Last updated: ${day} ${hours}:${minutes}`;
   }
   let dateElement = document.querySelector("#date");
   let currentTime = new Date();
