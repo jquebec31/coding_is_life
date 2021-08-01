@@ -79,3 +79,6 @@ function searchCurrentCity(currentLocation) {
   
   
 searchCity("New York");
+
+let fahlink = document.querysSelector("#fah-link");
+fahlink.addEventListener("click", displayFahrenheitTemp);
