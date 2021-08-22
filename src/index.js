@@ -24,7 +24,7 @@ function formatDate(date) {
   let dateElement = document.querySelector("#date");
   let currentTime = new Date();
   dateElement.innerHTML = formatDate(currentTime);
-  let units = "metric";
+  let units = "imperial";
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -85,9 +85,9 @@ function getForecast(coordinates) {
     
     document.querySelector("#icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
      
-    celsiusTemperature = response.data.main.temp;
+    fahTemperature = response.data.main.temp;
 
-    temperatureElement.innerHTML = Math.round(celsiusTemperature);
+    temperatureElement.innerHTML = Math.round(fahTemperature);
     cityElement.innerHTML = response.data.name;
    
     getForecast(response.data.coord);
@@ -128,13 +128,14 @@ function searchCurrentCity(currentLocation) {
 function displayCelsiusTemp(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
+  let celsiusTemperature = (fahTemperature - 32) * 5 / 9;
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   
 }
   function displayFahrenheitTemp(event) {
     event.preventDefault();
     let temperatureElement = document.querySelector("#temperature");
-    let fahTemperature = (celsiusTemperature * 9) / 5 + 32;
+    //let fahTemperature = (celsiusTemperature * 9) / 5 + 32;
     temperatureElement.innerHTML = Math.round(fahTemperature);
 }
     
@@ -142,13 +143,13 @@ function displayCelsiusTemp(event) {
 let searchForm = document.querySelector("#search-form");
   searchForm.addEventListener("submit", handleSubmit);
     
-let fahlink = document.querySelector("#fah-link");
-fahlink.addEventListener("click", displayFahrenheitTemp);
-
-let celsiusTemperature = null;
-
 let celsiuslink = document.querySelector("#celsius-link");
 celsiuslink.addEventListener("click", displayCelsiusTemp);
 
+let fahTemperature = null;
+
+let fahlink = document.querySelector("#fah-link");
+fahlink.addEventListener("click", displayFahrenheitTemp);
+
 searchCity("New York");
-//displayForecast();
+
